@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:masonry_grid/masonry_grid.dart';
+import 'package:store_app_git/controllers/productcontroller.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final ProductController productController = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body:
-            MasonryGridView.count(
+              Obx(() => MasonryGridView.count(
               crossAxisCount: 2,
               mainAxisSpacing: 4,
               crossAxisSpacing: 4,
@@ -41,8 +46,9 @@ class HomePage extends StatelessWidget {
                   child: Text("Aaryan"),
                 ),
               ),
-              itemCount: 10,
+              itemCount: productController.productList.length,
             )
+              )
 
         );
 
