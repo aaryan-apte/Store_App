@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:masonry_grid/masonry_grid.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,34 +28,50 @@ class HomePage extends StatelessWidget {
           IconButton(onPressed: (){}, icon: const Icon(Icons.shopping_cart)),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(30.0),
-            child: Text(
-              'Shop More! Udaao!!',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400),
-            ),
-          ),
-          Expanded(
-            child: StaggeredGridView.countBuilder(
-                crossAxisCount: 2,
-                itemCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 5,
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.orange,
-                  );
-                },
-                staggeredTileBuilder: (index) => const StaggeredTile.fit(1)),
-          )
-        ],
-      ),
-    );
+      body:
+            MasonryGridView.count(
+              crossAxisCount: 2,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
+              itemBuilder: (context, index) => Container(
+                height: 200,
+                width: 100,
+                color: Colors.orange,
+                child: Center(
+                  child: Text("Aaryan"),
+                ),
+              ),
+              itemCount: 10,
+            )
+
+        );
+
+
   }
 }
+
+// Column(
+// children: [
+// const Padding(
+// padding: EdgeInsets.all(30.0),
+// child: Text(
+// 'Shop More! Udaao!!',
+// style: TextStyle(
+// fontSize: 16,
+// fontWeight: FontWeight.w400),
+// ),
+// ),
+//
+// StaggeredGridView.countBuilder(
+// crossAxisCount: 2,
+// itemCount: 2,
+// crossAxisSpacing: 10,
+// mainAxisSpacing: 5,
+// itemBuilder: (context, index) {
+// return Container(
+// height: 100,
+// width: 100,
+// color: Colors.orange,
+// );
+// },
+// staggeredTileBuilder: (index) => const StaggeredTile.fit(1)),

@@ -68,7 +68,7 @@ packages:
       name: flutter_staggered_grid_view
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.4"
+    version: "0.6.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -81,6 +81,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  masonry_grid:
+    dependency: "direct main"
+    description:
+      name: masonry_grid
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   matcher:
     dependency: transitive
     description:
@@ -165,4 +172,4 @@ packages:
     version: "2.1.2"
 sdks:
   dart: ">=2.18.4 <3.0.0"
-  flutter: ">=1.17.0"
+  flutter: ">=2.0.0"
