@@ -9,10 +9,10 @@ class HomePage extends StatelessWidget {
 
       appBar: AppBar(
 
-        title: Center(
+        title: const Center(
           child: Center(
             child: Text("Shopping App",
-            style: TextStyle(fontSize: 20.0),),
+            style: TextStyle(fontSize: 20.0, fontFamily: "PlusJakartaSans-Regular"),),
           ),
         ),
         centerTitle: true,
@@ -23,7 +23,6 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.search_rounded)),
           IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.search_rounded)),
         ],
       ),
 

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:store_app_git/models/Product.dart';
 import 'package:store_app_git/pages/homepage.dart';
 
+void main(){
+  runApp(MyApp());
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
