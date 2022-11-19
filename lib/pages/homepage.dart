@@ -13,28 +13,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(
-
-        title: const Center(
-          child: Center(
-            child: Text("Shopping App",
-            style: TextStyle(fontSize: 20.0, fontFamily: "PlusJakartaSans-Regular", fontWeight: FontWeight.w800),
+        appBar: AppBar(
+          title: const Center(
+            child: Center(
+              child: Text(
+                "Shopping App",
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: "PlusJakartaSans-Regular",
+                    fontWeight: FontWeight.w800),
+              ),
             ),
           ),
+          centerTitle: true,
+          backgroundColor: Colors.blueGrey[900],
+          leading: const BackButton(),
+          iconTheme: const IconThemeData(
+            color: Colors.white,
+          ),
+          actions: [
+            IconButton(
+                onPressed: () {}, icon: const Icon(Icons.search_rounded)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
+          ],
         ),
-        centerTitle: true,
-        backgroundColor: Colors.blueGrey[900],
-        leading: const BackButton(),
-        iconTheme: const IconThemeData(color: Colors.white,
-        ),
-        actions: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.search_rounded)),
-          IconButton(onPressed: (){}, icon: const Icon(Icons.shopping_cart)),
-        ],
-      ),
-      body:
-              Obx(() => MasonryGridView.count(
+        body: Obx(() => MasonryGridView.count(
               crossAxisCount: 2,
               mainAxisSpacing: 4,
               crossAxisSpacing: 4,
@@ -42,17 +45,12 @@ class HomePage extends StatelessWidget {
                 height: 200,
                 width: 100,
                 color: Colors.orange,
-                child: Center(
+                child: const Center(
                   child: Text("Aaryan"),
                 ),
               ),
               itemCount: productController.productList.length,
-            )
-              )
-
-        );
-
-
+            )));
   }
 }
 
