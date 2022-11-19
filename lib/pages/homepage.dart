@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisSpacing: 7,
           crossAxisSpacing: 10,
           itemBuilder: (context, index) => Container(
-              height: 245,
+              height: 295,
               width: 100,
               color: Colors.white,
               child: Column(
@@ -107,9 +107,9 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         products[index].title!,
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
-                          fontWeight: FontWeight.w600,
-                        ),
+                            fontFamily: 'PlusJakartaSans',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 13),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            products[index].rating.toString(),
+                            products[index].rating!.rate!,
                             style: const TextStyle(color: Colors.white),
                           ),
                           const Icon(
