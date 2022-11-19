@@ -56,9 +56,11 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "Shopping App",
                 style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: "PlusJakartaSans-Regular",
-                    fontWeight: FontWeight.w800),
+                  fontSize: 20.0,
+                  fontFamily: "PlusJakartaSans-Regular",
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
@@ -94,17 +96,65 @@ class _HomePageState extends State<HomePage> {
           mainAxisSpacing: 7,
           crossAxisSpacing: 10,
           itemBuilder: (context, index) => Container(
-              height: 200,
+              height: 245,
               width: 100,
-              color: Colors.yellow,
+              color: Colors.white,
               child: Column(
                 children: <Widget>[
-                  Text(
-                    products[index].title!,
+                  Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Center(
+                      child: Text(
+                        products[index].title!,
+                        style: const TextStyle(
+                          fontFamily: 'PlusJakartaSans',
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ),
-                  Image(
-                    image: NetworkImage(products[index].image!),
+
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Image(
+                      image: NetworkImage(products[index].image!),
+                      height: 100,
+                      width: 100,
+                    ),
                   ),
+
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: Text(products[index].price!),
+                  ),
+
+                  // Text(products[index].rating!.toString()),
+                  // SizedBox(height: 8)
+
+                  if (products[index].rating != null)
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4, vertical: 2),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            products[index].rating.toString(),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          const Icon(
+                            Icons.star,
+                            size: 16,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ),
                 ],
               )),
           itemCount: products.length,
