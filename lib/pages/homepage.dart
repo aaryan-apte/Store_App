@@ -91,16 +91,22 @@ class _HomePageState extends State<HomePage> {
 
         body: MasonryGridView.count(
           crossAxisCount: 2,
-          mainAxisSpacing: 4,
-          crossAxisSpacing: 4,
+          mainAxisSpacing: 7,
+          crossAxisSpacing: 10,
           itemBuilder: (context, index) => Container(
-            height: 200,
-            width: 100,
-            color: Colors.orange,
-            child: Center(
-              child: Text(products[index].title!),
-            ),
-          ),
+              height: 200,
+              width: 100,
+              color: Colors.yellow,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    products[index].title!,
+                  ),
+                  Image(
+                    image: NetworkImage(products[index].image!),
+                  ),
+                ],
+              )),
           itemCount: products.length,
         ));
   }
