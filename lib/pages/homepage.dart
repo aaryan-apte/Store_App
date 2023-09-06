@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
 
                   Padding(
                     padding: EdgeInsets.all(15),
-                    child: Text(products[index].price!),
+                    child: Text('\$' + products[index].price!),
                   ),
 
                   // Text(products[index].rating!.toString()),
